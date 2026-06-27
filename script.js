@@ -766,6 +766,7 @@ function placeOrder() {
 
   fetch("https://script.google.com/macros/s/AKfycbyNBgidYf6_ctZdIn7eGbIWCAxIzTiGlwFvZBLJoo50TNYvgw5p1DgsAYNcQVoX6OxKCg/exec", {
   method: "POST",
+  mode: "no-cors",
   headers: {
     "Content-Type": "application/json"
   },
@@ -778,9 +779,7 @@ function placeOrder() {
     payment: order.payment.method
   })
 })
-.then(res => res.json())
-.then(data => console.log("Order saved to Google Sheets"))
-.catch(err => console.error(err));
+
 
   const orders = JSON.parse(localStorage.getItem("luxe_orders") || "[]");
   orders.unshift(order);
