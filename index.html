@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="SYM — premium e-commerce for electronics, fashion, watches, gaming and more." />
+<title>SYM — Premium E-Commerce</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ====== LOADING SCREEN ====== -->
+<div id="loader" class="loader">
+  <div class="loader-logo">SYM</div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<!-- ====== NAVIGATION ====== -->
+<header id="navbar" class="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="logo">SYM</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">🔍</button>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
+        ♡<span class="badge" id="wishCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" aria-label="Cart">
+        🛒<span class="badge" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn hamburger" id="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+  <div class="search-bar" id="searchBar">
+    <div class="container">
+      <input type="text" id="searchInput" placeholder="Search products, brands..." />
+    </div>
+  </div>
+</header>
+
+<!-- ====== HERO ====== -->
+<section id="home" class="hero">
+  <div class="float f1"></div>
+  <div class="float f2"></div>
+  <div class="float f3"></div>
+  <div class="container hero-inner">
+    <div class="hero-text reveal">
+      <span class="eyebrow">New Season · 2026</span>
+      <h1>Designed for the<br/><em>Extraordinary.</em></h1>
+      <p>Discover handpicked premium products curated for those who appreciate craftsmanship, design and timeless quality.</p>
+      <div class="hero-cta">
+        <a href="#shop" class="btn btn-primary">Shop Now →</a>
+        <a href="#about" class="btn btn-ghost">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong data-counter="120">0</strong><span>K+ Customers</span></div>
+        <div><strong data-counter="4500">0</strong><span>+ Products</span></div>
+        <div><strong data-counter="98">0</strong><span>% Satisfaction</span></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="hero-card glass">
+        <img loading="lazy" alt="Featured product" src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=900&q=80" />
+        <div class="hero-tag">Editor's Pick</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CATEGORIES ====== -->
+<section id="categories" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Shop by Category</h2>
+      <p>Explore our curated collections</p>
+    </div>
+    <div class="cat-grid" id="catGrid"></div>
+  </div>
+</section>
+
+<!-- ====== FLASH SALE ====== -->
+<section class="flash">
+  <div class="container flash-inner reveal">
+    <div>
+      <span class="eyebrow eyebrow-light">⚡ Limited Time</span>
+      <h2>Flash Sale — Up to 70% Off</h2>
+      <p>Hurry, offer ends soon. Free shipping on all orders.</p>
+    </div>
+    <div class="countdown" id="countdown">
+      <div><strong id="cdH">00</strong><span>Hours</span></div>
+      <div><strong id="cdM">00</strong><span>Minutes</span></div>
+      <div><strong id="cdS">00</strong><span>Seconds</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SHOP / PRODUCTS ====== -->
+<section id="shop" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Featured Products</h2>
+      <p>Premium selections, picked for you</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters reveal">
+      <div class="filter-group">
+        <label>Category</label>
+        <select id="filterCategory"><option value="all">All</option></select>
+      </div>
+      <div class="filter-group">
+        <label>Brand</label>
+        <select id="filterBrand"><option value="all">All</option></select>
+      </div>
+      <div class="filter-group">
+        <label>Rating</label>
+        <select id="filterRating">
+          <option value="0">Any</option>
+          <option value="3">3★ & up</option>
+          <option value="4">4★ & up</option>
+          <option value="4.5">4.5★ & up</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Max Price: <span id="priceLabel">200000</span></label>
+        <input type="range" id="filterPrice" min="0" max="200000" value="200000" step="10" />
+      </div>
+      <div class="filter-group">
+        <label>Sort</label>
+        <select id="sortBy">
+          <option value="featured">Best Selling</option>
+          <option value="newest">Newest</option>
+          <option value="lowhigh">Price: Low → High</option>
+          <option value="highlow">Price: High → Low</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+    <p id="noResults" class="no-results" style="display:none">No products match your filters.</p>
+  </div>
+</section>
+
+<!-- ====== TESTIMONIALS ====== -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>What Customers Say</h2>
+      <p>Real reviews from real shoppers</p>
+    </div>
+    <div class="t-carousel">
+      <button class="t-nav prev" id="tPrev" aria-label="Previous">‹</button>
+      <div class="t-track" id="tTrack"></div>
+      <button class="t-nav next" id="tNext" aria-label="Next">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ABOUT ====== -->
+<section id="about" class="section about">
+  <div class="container about-grid">
+    <div class="reveal">
+      <span class="eyebrow">About SYM</span>
+      <h2>Curated. Crafted. Considered.</h2>
+      <p>We bring together the world's best brands and emerging makers into one beautifully designed shopping experience. Every product is hand-picked for quality, design and longevity.</p>
+      <ul class="check-list">
+        <li>✓ Free shipping over 550</li>
+        <li>✓ 5-7 day easy returns</li>
+        <li>✓ Authentic products guaranteed</li>
+        <li>✓ 24/7 customer support</li>
+      </ul>
+    </div>
+    <div class="about-img reveal">
+      <img loading="lazy" alt="About LUXE" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900&q=80"/>
+    </div>
+  </div>
+</section>
+
+<!-- ====== NEWSLETTER ====== -->
+<section id="contact" class="newsletter">
+  <div class="container news-inner reveal">
+    <h2>Join the SYM Club</h2>
+    <p>Get 10% off your first order and early access to drops.</p>
+    <form id="newsForm" class="news-form" novalidate>
+      <input type="email" id="newsEmail" placeholder="Your email address" required />
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+    <small id="newsMsg" class="news-msg"></small>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="logo">SYM</div>
+      <p class="muted">Premium e-commerce for the modern shopper.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="YouTube">▶️</a>
+      </div>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#about">About</a><a href="#">Careers</a><a href="#">Press</a><a href="#">Blog</a>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <a href="#shop">All Products</a><a href="#categories">Categories</a><a href="#">Gift Cards</a><a href="#">Sale</a>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <a href="#">Help Center</a><a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookies</a>
+    </div>
+  </div>
+  <div class="copyright">© <span id="year"></span> SYM. All rights reserved.</div>
+</footer>
+
+<!-- ====== CART DRAWER ====== -->
+<aside class="drawer" id="cartDrawer" aria-hidden="true">
+  <div class="drawer-head">
+    <h3>Your Cart</h3>
+    <button class="icon-btn" data-close="cart">✕</button>
+  </div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot" id="cartFoot"></div>
+</aside>
+
+<!-- ====== WISHLIST DRAWER ====== -->
+<aside class="drawer" id="wishDrawer" aria-hidden="true">
+  <div class="drawer-head">
+    <h3>Your Wishlist</h3>
+    <button class="icon-btn" data-close="wish">✕</button>
+  </div>
+  <div class="drawer-body" id="wishItems"></div>
+</aside>
+
+<div class="backdrop" id="backdrop"></div>
+
+<!-- ====== QUICK VIEW MODAL ====== -->
+<div class="modal" id="quickModal" aria-hidden="true">
+  <div class="modal-card glass">
+    <button class="icon-btn modal-close" data-close="modal">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- ====== TOAST ====== -->
+<div class="toast-host" id="toastHost"></div>
+
+<!-- ====== BACK TO TOP ====== -->
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
