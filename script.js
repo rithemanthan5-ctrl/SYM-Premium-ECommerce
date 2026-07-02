@@ -17,24 +17,9 @@ const CATEGORIES = [
 ];
 
 const PRODUCTS = [
-  { id: 1,  title: "Wireless Pro Headphones",    brand: "Sonance",  category: "electronics", price: 249,  oldPrice: 349, rating: 4.7, reviews: 312, sales: 980, img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=700&q=80" },
-  { id: 2,  title: "Smartphone Ultra",           brand: "Nexus",    category: "electronics", price: 1099, oldPrice: 1299,rating: 4.8, reviews: 540, sales: 1500,img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=700&q=80" },
-  { id: 3,  title: "4K Mirrorless Camera",       brand: "Lumira",   category: "electronics", price: 1499, oldPrice: 1799,rating: 4.6, reviews: 220, sales: 410, img: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=700&q=80" },
-  { id: 4,  title: "Smart Watch Series X",       brand: "Tempus",   category: "watches",     price: 399,  oldPrice: 499, rating: 4.5, reviews: 410, sales: 760, img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&q=80" },
-  { id: 5,  title: "Classic Chronograph",        brand: "Tempus",   category: "watches",     price: 899,  oldPrice: null,rating: 4.9, reviews: 132, sales: 230, img: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=700&q=80" },
-  { id: 6,  title: "Running Sneakers",           brand: "Stride",   category: "shoes",       price: 129,  oldPrice: 179, rating: 4.4, reviews: 612, sales: 2100,img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700&q=80" },
-  { id: 7,  title: "Leather Boots",              brand: "Maven",    category: "shoes",       price: 219,  oldPrice: 279, rating: 4.6, reviews: 188, sales: 540, img: "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=700&q=80" },
-  { id: 8,  title: "Cashmere Sweater",           brand: "Atelier",  category: "fashion",     price: 189,  oldPrice: 240, rating: 4.7, reviews: 145, sales: 320, img: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=700&q=80" },
-  { id: 9,  title: "Tailored Trench Coat",       brand: "Atelier",  category: "fashion",     price: 459,  oldPrice: 599, rating: 4.8, reviews: 92,  sales: 180, img: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=700&q=80" },
-  { id: 10, title: "Gaming Console Pro",         brand: "Vortex",   category: "gaming",      price: 549,  oldPrice: 649, rating: 4.9, reviews: 880, sales: 1900,img: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=700&q=80" },
-  { id: 11, title: "Mechanical Keyboard",        brand: "Vortex",   category: "gaming",      price: 159,  oldPrice: 199, rating: 4.6, reviews: 412, sales: 870, img: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=80" },
-  { id: 12, title: "Ergonomic Lounge Chair",     brand: "Northwood",category: "furniture",   price: 749,  oldPrice: 949, rating: 4.7, reviews: 78,  sales: 140, img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80" },
-  { id: 13, title: "Oak Coffee Table",           brand: "Northwood",category: "furniture",   price: 329,  oldPrice: null,rating: 4.5, reviews: 56,  sales: 110, img: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=700&q=80" },
-  { id: 14, title: "Skincare Essentials Set",    brand: "Lumière",  category: "beauty",      price: 89,   oldPrice: 119, rating: 4.6, reviews: 245, sales: 480, img: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=700&q=80" },
-  { id: 15, title: "Signature Eau de Parfum",    brand: "Lumière",  category: "beauty",      price: 145,  oldPrice: 180, rating: 4.8, reviews: 320, sales: 620, img: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=700&q=80" },
-  { id: 16, title: "The Design Anthology",       brand: "Page&Co",  category: "books",       price: 39,   oldPrice: 49,  rating: 4.5, reviews: 98,  sales: 210, img: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=700&q=80" },
-  { id: 17, title: "Bluetooth Speaker",          brand: "Sonance",  category: "electronics", price: 179,  oldPrice: 229, rating: 4.4, reviews: 290, sales: 700, img: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=700&q=80" },
-  { id: 18, title: "Silk Scarf",                 brand: "Atelier",  category: "fashion",     price: 89,   oldPrice: 120, rating: 4.6, reviews: 67,  sales: 150, img: "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=700&q=80" },
+  { id: 1,  title: "Classic Watch",    brand: "Matrix",  category: "watches", price: 599,  oldPrice:790, rating: 4.7, reviews: 312, sales: 980, img: "watch1.jpeg" },
+  { id: 6,  title: "Camera Stand",           brand: "Stride",   category: "electronics",       price: 599,  oldPrice: 810, rating: 4.4, reviews: 612, sales: 2100,img: "camerastand1.jpeg" },
+ 
 ];
 
 const TESTIMONIALS = [
@@ -763,13 +748,11 @@ function placeOrder() {
       return { id: p.id, title: p.title, image: p.img, qty: item.qty, price: p.price, total: p.price * item.qty };
     })
   };
-
-  fetch("https://script.google.com/macros/s/AKfycbyNBgidYf6_ctZdIn7eGbIWCAxIzTiGlwFvZBLJoo50TNYvgw5p1DgsAYNcQVoX6OxKCg/exec", {
+console.log(order)
+  fetch("https://script.google.com/macros/s/AKfycbzoEy0sFpebmxcoMeKqhqBH9DVkASLTALdxf-DnMLuqIsSHP6l3Mg8IpIazamof2YW3/exec", {
   method: "POST",
-  mode: "no-cors",
-  headers: {
-    "Content-Type": "application/json"
-  },
+  
+  
   body: JSON.stringify({
     name: order.customerName,
     phone: order.delivery.mobile,
