@@ -12,7 +12,7 @@ const CATEGORIES = [
   { id: "watches",     name: "Watches",     img: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&q=80" },
   { id: "gaming",      name: "Gaming",      img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&q=80" },
   { id: "furniture",   name: "Furniture",   img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" },
-  { id: "beauty",      name: "Beauty",      img: "https://images.unsplash.com/photo-1522335789203-aaaaaa6caedf?w=600&q=80" },
+  { id: "beauty",      name: "Beauty",      img: "https://th.bing.com/th/id/OIP.sI-TElAvDKohsbmZo8gmaQHaEJ?w=326&h=183&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" },
   { id: "books",       name: "Books",       img: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&q=80" },
 ];
 
